@@ -1,0 +1,7 @@
+openai
+pandas
+numpy
+scikit-learn
+textstat
+nltk
+python-dotenv
