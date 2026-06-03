@@ -1,32 +1,48 @@
-"""
-Inference module for generating simplified text
-using an LLM model.
-"""
-
 from openai import OpenAI
-from config import SYSTEM_PROMPT
+from src.config import OPENAI_API_KEY, BASE_MODEL
 
 
-client = OpenAI()
+client = OpenAI(
+    api_key=OPENAI_API_KEY
+)
 
 
-def simplify_text(text, model):
-    """
-    Generate simplified text from complex input.
-    """
+def simplify_zero_shot(sentence):
+
+    prompt = (
+        "Simplify this sentence while preserving meaning:\n"
+    )
 
     response = client.chat.completions.create(
-        model=model,
+        model=BASE_MODEL,
         messages=[
             {
-                "role": "system",
-                "content": SYSTEM_PROMPT
-            },
+                "role": "user",
+                "content": prompt + sentence
+            }
+        ],
+        temperature=0.3
+    )
+
+
+    return response.choices[0].message.content
+
+
+
+def simplify_fine_tuned(
+    sentence,
+    model_id
+):
+
+    response = client.chat.completions.create(
+        model=model_id,
+        messages=[
             {
                 "role": "user",
-                "content": text
+                "content": sentence
             }
         ]
     )
+
 
     return response.choices[0].message.content
