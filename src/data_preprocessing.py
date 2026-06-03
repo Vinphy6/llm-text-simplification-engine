@@ -1,43 +1,50 @@
-"""
-Prepare text data for OpenAI fine-tuning.
-
-OpenAI fine-tuning requires training data
-formatted as conversational examples.
-"""
-
 import json
 
 
-def create_training_example(complex_text, simplified_text):
+def filter_training_pairs(df, sample_size=100):
     """
-    Convert an input/output pair into OpenAI chat format.
-    """
-
-    return {
-        "messages": [
-            {
-                "role": "system",
-                "content": (
-                    "Simplify complex text while preserving meaning."
-                ),
-            },
-            {
-                "role": "user",
-                "content": complex_text,
-            },
-            {
-                "role": "assistant",
-                "content": simplified_text,
-            },
-        ]
-    }
-
-
-def save_training_file(examples, output_path):
-    """
-    Save examples as JSONL file for fine-tuning.
+    Select complex-simple sentence pairs
+    from Newsela dataset.
     """
 
-    with open(output_path, "w", encoding="utf-8") as file:
-        for example in examples:
-            file.write(json.dumps(example) + "\n")
+    filtered = df[
+        (df["id_complex"]
+            .str.split("-")
+            .str[-3]
+            .astype(int) == 0)
+        &
+        (df["id_simple"]
+            .str.split("-")
+            .str[-3]
+            .astype(int) == 4)
+    ]
+
+    return filtered.sample(
+        n=sample_size,
+        random_state=42
+    )
+
+
+def create_jsonl(df, output_file):
+    """
+    Convert dataset into OpenAI fine-tuning format.
+    """
+
+    with open(output_file, "w") as f:
+
+        for _, row in df.iterrows():
+
+            example = {
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": row["prompt"]
+                    },
+                    {
+                        "role": "assistant",
+                        "content": row["completion"]
+                    }
+                ]
+            }
+
+            f.write(json.dumps(example) + "\n")
