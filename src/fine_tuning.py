@@ -40,7 +40,7 @@ def upload_training_file(jsonl_path):
     return file.id
 
 
-def start_fine_tuning(training_file_id, model="gpt-4o-mini"):
+def start_fine_tuning(training_file_id, model="gpt-4o-mini-2024-07-18"):
     job = client.fine_tuning.jobs.create(
         training_file=training_file_id,
         model=model

@@ -1,22 +1,42 @@
 [
-    {
-        "complex": "The patient exhibited symptoms of fatigue and respiratory discomfort.",
-        "simple": "The patient felt tired and had trouble breathing."
-    },
-    {
-        "complex": "The implementation of the policy resulted in significant operational improvements.",
-        "simple": "The new policy helped operations work much better."
-    },
-    {
-        "complex": "The committee postponed the decision due to insufficient evidence.",
-        "simple": "The committee delayed the decision because there was not enough evidence."
-    },
-    {
-        "complex": "The precipitation probability is significantly elevated throughout the afternoon.",
-        "simple": "It is very likely to rain this afternoon."
-    },
-    {
-        "complex": "The organization implemented measures to enhance cybersecurity infrastructure.",
-        "simple": "The organization improved its computer security."
-    }
+  {
+    "complex": "The physician administered medication to alleviate the patient's symptoms.",
+    "simple": "The doctor gave medicine to help the patient feel better."
+  },
+  {
+    "complex": "The organization implemented a comprehensive strategy to improve efficiency.",
+    "simple": "The company started a plan to work better."
+  },
+  {
+    "complex": "The adverse weather conditions resulted in the postponement of the event.",
+    "simple": "Bad weather caused the event to be delayed."
+  },
+  {
+    "complex": "The utilization of renewable energy sources can mitigate environmental damage.",
+    "simple": "Using clean energy can reduce harm to the environment."
+  },
+  {
+    "complex": "The investigation revealed substantial evidence supporting the hypothesis.",
+    "simple": "The study found strong evidence supporting the idea."
+  },
+  {
+    "complex": "The committee conducted an evaluation of the proposed modifications.",
+    "simple": "The committee reviewed the suggested changes."
+  },
+  {
+    "complex": "The technological advancement significantly transformed communication methods.",
+    "simple": "New technology greatly changed how people communicate."
+  },
+  {
+    "complex": "The excessive consumption of sugar may contribute to various health complications.",
+    "simple": "Eating too much sugar may cause health problems."
+  },
+  {
+    "complex": "The company experienced a substantial increase in annual revenue.",
+    "simple": "The company made much more money this year."
+  },
+  {
+    "complex": "The government introduced regulations to enhance public safety.",
+    "simple": "The government made rules to keep people safer."
+  }
 ]
