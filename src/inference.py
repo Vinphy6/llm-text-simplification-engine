@@ -38,6 +38,10 @@ def simplify_fine_tuned(
         model=model_id,
         messages=[
             {
+            "role": "system",
+            "content": "Rewrite the user's text in simpler English. Do not explain. Do not add new information. Output only the simplified sentence."
+            },
+            {
                 "role": "user",
                 "content": sentence
             }

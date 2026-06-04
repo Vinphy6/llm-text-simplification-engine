@@ -20,18 +20,19 @@ def main():
         text
     )
 
-    """
+    
     finetuned = simplify_fine_tuned(
-        text
+        text,
+        "ft:gpt-4o-mini-2024-07-18:personal::Dn5uTSHC"
     )
-    """
+
     print("\nSimplified:")
     print(simplified)
 
-    """
+
     print("\nFinetuned:")
     print(finetuned)
-    """
+
 
     print("\nOriginal readability:")
     print(
@@ -44,12 +45,12 @@ def main():
         readability_score(simplified)
     )
 
-    """
+
     print("\nFinetuned readability:")
     print(
         readability_score(finetuned)
     )
-    """
+
     
 if __name__ == "__main__":
     main()
