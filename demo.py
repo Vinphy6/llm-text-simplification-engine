@@ -20,17 +20,18 @@ def main():
         text
     )
 
+    """
     finetuned = simplify_fine_tuned(
         text
     )
-
+    """
     print("\nSimplified:")
     print(simplified)
 
-
+    """
     print("\nFinetuned:")
     print(finetuned)
-
+    """
 
     print("\nOriginal readability:")
     print(
@@ -43,11 +44,12 @@ def main():
         readability_score(simplified)
     )
 
-
+    """
     print("\nFinetuned readability:")
     print(
         readability_score(finetuned)
     )
-
+    """
+    
 if __name__ == "__main__":
     main()
