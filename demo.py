@@ -1,4 +1,7 @@
-from src.inference import simplify_zero_shot
+from src.inference import (
+    simplify_zero_shot,
+    simplify_fine_tuned
+)
 from src.evaluation import readability_score
 
 
@@ -17,9 +20,16 @@ def main():
         text
     )
 
+    finetuned = simplify_fine_tuned(
+        text
+    )
 
     print("\nSimplified:")
     print(simplified)
+
+
+    print("\nFinetuned:")
+    print(finetuned)
 
 
     print("\nOriginal readability:")
@@ -33,6 +43,11 @@ def main():
         readability_score(simplified)
     )
 
+
+    print("\nFinetuned readability:")
+    print(
+        readability_score(finetuned)
+    )
 
 if __name__ == "__main__":
     main()

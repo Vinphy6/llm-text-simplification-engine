@@ -1,0 +1,22 @@
+[
+    {
+        "complex": "The patient exhibited symptoms of fatigue and respiratory discomfort.",
+        "simple": "The patient felt tired and had trouble breathing."
+    },
+    {
+        "complex": "The implementation of the policy resulted in significant operational improvements.",
+        "simple": "The new policy helped operations work much better."
+    },
+    {
+        "complex": "The committee postponed the decision due to insufficient evidence.",
+        "simple": "The committee delayed the decision because there was not enough evidence."
+    },
+    {
+        "complex": "The precipitation probability is significantly elevated throughout the afternoon.",
+        "simple": "It is very likely to rain this afternoon."
+    },
+    {
+        "complex": "The organization implemented measures to enhance cybersecurity infrastructure.",
+        "simple": "The organization improved its computer security."
+    }
+]
